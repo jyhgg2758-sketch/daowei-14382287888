@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPS/Brinks 渠道发货打包规范</title>
+    <style>
+        :root {
+            --ups-brown: #351C15;
+            --ups-gold: #FFB500;
+            --alert-red: #D32F2F;
+            --bg-color: #f4f6f8;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--ups-brown);
+        }
+
+        h1 {
+            color: var(--ups-brown);
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: var(--ups-brown);
+            border-left: 5px solid var(--ups-gold);
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+
+        /* 警告框样式 */
+        .alert-box {
+            background-color: #fff5f5;
+            border: 1px solid #feb2b2;
+            color: #c53030;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .alert-icon {
+            font-size: 24px;
+            margin-right: 15px;
+        }
+
+        .highlight-text {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* 规格卡片样式 */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .spec-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .spec-title {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .spec-value {
+            font-size: 1.2em;
+            color: var(--ups-brown);
+            font-weight: bold;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📦 UPS DHL  FedEx  顺丰 韵达 四海通达 皇邮 SUPS  / Brinks 渠道 发货打包规范指南</h1>
+    
+    <p>为了确保您的货物顺利发出并避免产生额外的高额费用，请在打包前仔细阅读以下基于 <strong>Brinks 代理渠道</strong> 及 <strong>UPS 通用标准</strong> 的操作规范。</p >
+
+    <!-- 核心警告区域 -->
+    <div class="alert-box">
+        <span class="alert-icon">⚠️</span>
+        <div>
+            <span class="highlight-text">严重警告：超重罚款</span> 
+            单箱重量需超过 <strong>21公斤 (50 lbs)，体积重量与实际重量取大值 最高不超过 23KG（即56磅） 请酌情按自己需求</strong>。 
+            一旦超标，将面临 <strong></strong> 超重附加费，
+            
+            
+            
+            
+            
+            计费重量结算规则（关键）系统将对比包裹的“实际重量”与“体积重量”，并取两者中的最大值作为计费依据：请发货人根据此规则，合理分配单箱空间与重量以实现利益最大化。
+            
+            。
+        </div>
+    </div>
+
+    <h2>1. 重量与尺寸限制 (红线标准)</h2>
+    <div class="specs-grid">
+        <div class="spec-card">
+            <span class="spec-title">⚖️ 单箱限重</span>
+            <div class="spec-value">≤ 21-23 KG (50 LBS)</div>
+            <p style="font-size: 0.9em; color: #666; margin-top: 5px;">建议控制在 21-23KG 之间以确保安全 如56磅请确认运费增加 但是尺寸重量有所不同，请按自己需求来   。</p >
+        </div>
+        <div class="spec-card">
+            <span class="spec-title">📏 推荐尺寸</span>
+            <div class="spec-value">18 x 18 x 21 英寸</div>
+            <p style="font-size: 0.9em; color: #666; margin-top: 5px;">若使用 Walmart 购买的箱子，请务必裁切高度以符合此标准。</p >
+        </div>
+    </div>
+
+    <h2>2. 计费规则说明</h2>
+    <p>运费将取<strong>实重</strong>与<strong>体积重</strong>中的较大者收取。</p >
+    <ul>
+        <li><strong>体积重计算公式：</strong>(长 × 宽 × 高 cm) ÷ 139</li>
+        <li><strong>避坑指南：</strong>请勿使用过大的箱子 如果箱子鼓起，将以最突出部分测量为准。</li>
+        <li><strong>当前案例参考：</strong>超过 18x18x24 箱体56磅    的箱子因体积过大，会导致运费激增。请裁剪至 18x18x21  或接受运费。</li>
+    </ul>
+
+    <h2>3. 包装操作建议</h2>
+    <ul>
+        <li><strong>关于买箱子：</strong>建材市场或 Walmart 的标准箱子通常偏高如需要精确到50磅费用请。购买后请自行裁剪，不要直接使用原箱高度。</li>
+        <li><strong>关于分箱：</strong>如果货物总重超过 23KG，<strong>必须</strong>分装成两个或多个箱子。不要试图塞进一个大箱子。</li>
+        <li><strong>关于填充：</strong>箱内空隙请使用填充物（气泡膜、报纸）填满，防止运输途中塌陷变形导致尺寸测量误差。</li>
+        <li><strong>封箱：</strong>使用宽胶带密封所有开口（包括底部和顶部接缝），确保箱子在搬运中不会散开。</li>
+    </ul>
+
+    <h2>4. 禁运物品提醒</h2>
+    <p>以下物品严禁通过此渠道寄送，否则可能导致扣关或销毁：</p >
+    <ul>
+        <li>易燃易爆品（香水、指甲油、压缩气罐）</li>
+        <li>纯电池、移动电源（需走特定渠道）</li>
+        <li>液体、粉末、膏状物（无正规证明）</li>
+        <li>品牌仿牌侵权商品</li>
+    </ul>
+
+    <div class="footer">
+        <p>如有不确定的尺寸或重量问题，请在打包前拍照发给客服确认。 避免因包装不当产生的额外损失。</p >
+    </div>
+</div>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPS/Brinks 渠道发货操作规范</title>
+    <style>
+        :root {
+            --primary-color: #351C15; /* UPS Brown */
+            --accent-color: #FFB500; /* UPS Gold */
+            --danger-color: #D32F2F;
+            --bg-color: #f4f6f9;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 10px;
+            margin-top: 30px;
+            background: #fafafa;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .alert-box {
+            background-color: #fff3f3;
+            border: 1px solid #ffcdd2;
+            border-left: 5px solid var(--danger-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .alert-title {
+            color: var(--danger-color);
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        li::before {
+            content: "✔";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .contact-info {
+            background-color: #eef4fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2em;
+            margin: 20px 0;
+            border: 1px dashed #2196F3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📦 UPS/Brinks 渠道发货操作指南</h1>
+    
+    <p>为了确保您的货物安全、准时送达，并避免产生额外的高额费用，请务必严格遵守以下操作规范。</p >
+    
+
+    <!-- 核心警告 -->
+    <div class="alert-box">
+        <span class="alert-title">⚠️ 严重警告：违禁品与海关查验</span>
+        <ul style="margin:0;">
+            <li><strong>严禁夹带：</strong>香水、喷雾、药品、电池等危险品/违禁品。</li>
+            <li><strong>包装外观：</strong>禁止使用带有危险品标志/标签的外箱。</li>
+            <li><strong>如实申报：</strong>不可谎报品名。若被海关查扣，货物交由海关处理，我司概不负责。</li>
+            <li><strong>高额罚款：</strong>违规操作导致的罚款最低 <strong>5000 USD</strong> 起。</li>
+        </ul>
+    </div>
+
+    <h2>1. 贴单与发票规范 (至关重要)</h2>
+    <ul>
+        <li><strong>外箱贴单：</strong>每一件货物外箱必须贴好运单和发票，务必<strong>贴稳、贴牢</strong>，防止运输途中脱落导致丢件。</li>
+        <li><strong>发票备份：</strong>
+            <ol style="list-style: decimal inside; margin-left: 20px;">
+                <li>给提货司机准备 <strong>3份</strong> 纸质发票。</li>
+                <li>另外再贴 <strong>1份</strong> 发票在货物外箱上（作为双重保险，防止司机搞丢）。</li>
+            </ol>
+        </li>
+    </ul>
+
+    <h2>2. 提货流程</h2>
+    <p>货物备好后，请主动联系当地 UPS 要求上门提货。</p >
+    <div class="contact-info">
+        🇨🇦 加拿大当地 UPS 电话： 
+        <strong style="font-size: 1.4em; color: var(--primary-color);">以当地为准</strong>
+    </div>
+
+    <h2>3. 重量与尺寸限制 (红线)</h2>
+    <ul>
+        <li><strong>单箱限重：</strong>必须控制在 <strong>23KG (50 lbs)</strong> 以下。
+             <span style="color: #666; font-size: 0.9em;">*建议控制在 21-22KG 左右，以免因误差超重。</span>
+        </li>
+        <li><strong>超重后果：</strong>超过 23KG 将面临高额超重费（如 800元+），。</li>
+        <li><strong>尺寸调整：</strong>如果购买的标准箱子过高，请自行裁切，保持体积紧凑（参考尺寸：18x18x21英寸）。</li>
+    </ul>
+
+    <h2>4. 计费方式说明</h2>
+    <p>UPS 采取<strong>“取大计费”</strong>原则，即比较实重与体积重，哪个大按哪个收。</p >
+    <table>
+        <tr>
+            <th>项目</th>
+            <th>计算规则</th>
+        </tr>
+        <tr>
+            <td><strong>体积重公式</strong></td>
+            <td>长(cm) × 宽(cm) × 高(cm) ÷ 5000</td>
+        </tr>
+        <tr>
+            <td><strong>进位规则</strong></td>
+            <td>不足 0.5KG 按 0.5KG 收费；超过 0.5KG 进位收取（例如 10.2KG 算 10.5KG）。</td>
+        </tr>
+        <tr>
+            <td><strong>最终账单</strong></td>
+            <td>以 UPS 官方账单重量为准。</td>
+        </tr>
+    </table>
+
+    <h2>5. 赔偿标准与保险建议</h2>
+    <div class="alert-box" style="background-color: #fff8e1; border-color: #ffe082; border-left-color: #ffa000;">
+        <span class="alert-title" style="color: #f57c00;">💰 贵重物品请务必购买商业保险！</span>
+        <p>如果没有购买保险，UPS 默认赔偿标准极低：</p >
+        <ul style="margin:0;">
+            <li><strong>丢失赔偿：</strong>最高仅赔偿 <strong>100 刀 / 票</strong>。</li>
+            <li><strong>破损赔偿：</strong>默认<strong>不赔偿</strong>。</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>请仔细阅读以上条款，打包前再次确认重量与尺寸。 祝您的货物顺利送达！</p >
+    </footer>
+</div>
+
+</body>
+</html>
