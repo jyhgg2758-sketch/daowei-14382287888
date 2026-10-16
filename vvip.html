@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>全球国际物流关键词矩阵生成器</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f7f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        h2 { color: #333; }
+        p { color: #666; line-height: 1.5; }
+        button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover { background-color: #0052a3; }
+        #status {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🌍 全球国际物流关键词矩阵生成器</h2>
+    <p>点击下方按钮，系统将自动通过 JavaScript 全排列组合服务、货物与国家/地区维度，瞬间生成上万个中英文双语关键词并打包下载为 CSV 文件。</p>
+    
+    <button onclick="generateKeywords()">生成并下载关键词 CSV</button>
+    
+    <div id="status"></div>
+
+    <script>
+        function generateKeywords() {
+            // 1. 服务/动作维度
+            const servicesEn = [
+                "International shipping", "Freight forwarding", "Door to door delivery", 
+                "Ocean freight", "Air cargo", "Project cargo logistics", "Heavy lift transport", 
+                "Customs clearance", "OOG shipping", "Breakbulk shipping", "Winery logistics", 
+                "E-commerce fulfillment", "Baggage forwarding", "Relocation service"
+            ];
+            const servicesCn = [
+                "国际运输", "货代服务", "门到门派送", "海运", "空运", "项目物流", 
+                "大件运输", "报关清关", "超限运输", "件杂货运输", "酒类物流", 
+                "电商一件代发", "行李托运", "搬家服务"
+            ];
+
+            // 2. 货物/场景维度
+            const cargosEn = [
+                "heavy machinery", "industrial equipment", "construction vehicles", 
+                "solar panels", "steel pipes", "mining equipment", "auto parts", 
+                "consumer goods", "personal effects", "furniture", "electronics", 
+                "hazardous materials", "cold chain goods", "raw materials"
+            ];
+            const cargosCn = [
+                "重型机械", "工业设备", "工程车辆", "太阳能光伏", "钢管", 
+                "矿山设备", "汽车配件", "消费品", "私人物品", "家具", 
+                "电子产品", "危险品", "冷链货物", "原材料"
+            ];
+
+            // 3. 地区/国家/航线维度
+            const locationsEn = [
+                "from China to USA", "from China to Canada", "from China to Europe", 
+                "from Asia to North America", "Montreal to Vancouver", "Toronto to Shanghai", 
+                "Global", "North America", "Europe", "Southeast Asia", "worldwide"
+            ];
+            const locationsCn = [
+                "从中国到美国", "从中国到加拿大", "从中国到欧洲", 
+                "从亚洲到北美", "蒙特利尔到温哥华", "多伦多到上海", 
+                "全球", "北美", "欧洲", "东南亚", "全球范围内"
+            ];
+
+            let keywordSet = new Set();
+            let csvContent = "\uFEFFEnglish Keyword,Chinese Keyword\n"; // 带 BOM 防止 Excel 打开中文乱码
+
+            // 嵌套循环生成全排列
+            for (let s = 0; s < servicesEn.length; s++) {
+                for (let c = 0; c < cargosEn.length; c++) {
+                    for (let l = 0; l < locationsEn.length; l++) {
+                        let en = `${servicesEn[s]} for ${cargosEn[c]} ${locationsEn[l]}`;
+                        let cn = `${locationsCn[l]}${cargosCn[c]}${servicesCn[s]}`;
+                        
+                        // 简单组装并加入 Set 去重
+                        let line = `"${en}","${cn}"`;
+                        keywordSet.add(line);
+                    }
+                }
+            }
+
+            let keywordsArray = Array.from(keywordSet);
+            csvContent += keywordsArray.join("\n");
+
+            // 创建 Blob 并触发浏览器下载
+            let blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            let url = URL.createObjectURL(blob);
+            let link = document.createElement("a");
+            link.setAttribute("href", url);
+            link.setAttribute("download", "global_logistics_keywords_10k.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            document.getElementById("status").innerText = `成功生成并下载共计 ${keywordsArray.length} 个高质量关键词！`;
+        }
+    </script>
+
+</body>
+</html>
